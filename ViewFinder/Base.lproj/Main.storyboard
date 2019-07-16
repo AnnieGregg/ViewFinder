@@ -51,25 +51,26 @@
         <!--Add New Photo-->
         <scene sceneID="ms3-VM-veY">
             <objects>
-                <viewController id="5b2-x8-WR5" sceneMemberID="viewController">
+                <viewController id="5b2-x8-WR5" customClass="AddPhotoViewController" customModule="ViewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R1x-Hx-oFt">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2V-uN-Ggf">
-                                <rect key="frame" x="119" y="497" width="54" height="30"/>
+                                <rect key="frame" x="119" y="497" width="54" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Camera"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGE-0W-Es6">
-                                <rect key="frame" x="338" y="497" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Photo Library"/>
+                                <connections>
+                                    <action selector="CameraButtonTapped:" destination="5b2-x8-WR5" eventType="touchUpInside" id="I9d-ZK-WPb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khd-QS-D9c">
                                 <rect key="frame" x="619" y="497" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Albums"/>
+                                <connections>
+                                    <action selector="AlbumsButtonTapped:" destination="5b2-x8-WR5" eventType="touchUpInside" id="saP-nV-Fl5"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GuyFieri" translatesAutoresizingMaskIntoConstraints="NO" id="Q9o-V1-Sqa">
                                 <rect key="frame" x="264" y="181" width="240" height="128"/>
@@ -83,19 +84,35 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLT-Gx-LiV">
-                                <rect key="frame" x="367" y="755" width="34" height="30"/>
+                                <rect key="frame" x="367" y="755" width="92" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="SaveButtonTapped:" destination="5b2-x8-WR5" eventType="touchUpInside" id="9Ej-dA-LpG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGE-0W-Es6">
+                                <rect key="frame" x="340" y="527" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Photo Library"/>
+                                <connections>
+                                    <action selector="CameraButtonTapped:" destination="5b2-x8-WR5" eventType="touchUpInside" id="ca4-70-xGh"/>
+                                    <action selector="PhotoLibraryButtonTapped:" destination="5b2-x8-WR5" eventType="touchUpInside" id="I0g-I0-ShA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="HMO-gi-ZLG"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Photo" id="rHl-2X-CV5"/>
+                    <connections>
+                        <outlet property="Photo" destination="Q9o-V1-Sqa" id="AF9-zI-mpG"/>
+                        <outlet property="TextField" destination="8Kk-qZ-DO2" id="17l-YW-CVd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XLb-X0-DKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1479" y="69"/>
+            <point key="canvasLocation" x="1478.90625" y="68.5546875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QTO-44-zTJ">
